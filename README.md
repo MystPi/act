@@ -5,7 +5,7 @@
 
 Gleam is a functional programming language that does not support having _mutable state_. As such, programmers often have to pass state around manually, threading it through functions via arguments and return values. This can become a bit repetitive and clumsy.
 
-What if state could be 'threaded' through functions automatically, with a nice API that resembles mutable state? This is the central idea of `act` and the [`Action`](https://hexdocs.pm/act/act#Action) type.
+What if state could be 'threaded' through functions automatically, with a nice API that resembles mutable state? This is the central idea of `act` and the [`Action`](https://hexdocs.pm/act/act.html#Action) type.
 
 ```gleam
 type Action(result, state) = fn(state) -> #(state, result)
