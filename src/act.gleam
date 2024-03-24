@@ -24,22 +24,22 @@ import gleam/list
 ///
 /// fn increment(by num: Int) -> Action(String, Int) {
 ///   fn(state) {
-///     #(state + num, "I added " <> int.to_string(by) <> " to the state!")
+///     #(state + num, "I added " <> int.to_string(by))
 ///   }
 /// }
 ///
 /// pub fn main() {
 ///   let initial_state = 0
-///   initial_state |> increment(by: 2) |> increment(by: 3)
+///
+///   initial_state
+///   |> act.all([increment(by: 2), increment(by: 5), increment(by: 1)])
 /// }
 ///
-/// // -> #(5, "I added 3 to the state!")
+/// // -> #(8, ["I added 2", "I added 5", "I added 1"])
 /// ```
 ///
-/// You might have noticed that we didn't use any exports from `act` in the
-/// example above, other than the `Action` type. That's because actions really
-/// are *just functions*! `act` simply provides a nice API for working with these
-/// functions.
+/// As you can see, actions really are *just functions*! `act` simply provides a
+/// nice API for creating and working with these functions.
 ///
 pub type Action(result, state) =
   fn(state) -> #(state, result)
