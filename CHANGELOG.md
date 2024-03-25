@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning].
 
 ## [Unreleased]
 
+### Added
+
+- 3 new functions for running actions: `run`, `eval`, and `exec`.
+
 ## [0.1.0] - 2024-03-24
 
 - initial release

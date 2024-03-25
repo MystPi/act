@@ -49,6 +49,31 @@ pub type Action(result, state) =
 pub type ResultAction(ok, error, state) =
   Action(Result(ok, error), state)
 
+// ---- RUNNING ----------------------------------------------------------------
+
+/// Run an action with the given state. Since actions are just functions that can
+/// be called like any other, you will typically never need this function except
+/// to improve readability in situations where it's not obvious what's going on.
+///
+pub fn run(action: Action(result, state), with state: state) -> #(state, result) {
+  action(state)
+}
+
+/// Run an action with the given state and return its result. This function is
+/// the equivalent of `action(state).1` and may help improve readability.
+///
+pub fn eval(action: Action(result, state), with state: state) -> result {
+  action(state).1
+}
+
+/// Run an action with the given state and return the final state, ignoring the
+/// action's result. This function is the equivalent of `action(state).0` and
+/// may help improve readability.
+///
+pub fn exec(action: Action(result, state), with state: state) -> state {
+  action(state).0
+}
+
 // ---- CONSTRUCTORS -----------------------------------------------------------
 
 /// Create an action that returns the given value and doesn't modify state.
