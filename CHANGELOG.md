@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning].
 
 ## [Unreleased]
 
+### Changed
+
+- Added missing return type annotations to example functions in doc comments.
+
 ## [0.2.0] - 2024-03-25
 
 ### Added

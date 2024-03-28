@@ -107,7 +107,7 @@ pub fn error(value: error) -> ResultAction(ok, error, state) {
 /// functions such as `do` do not pass the updated state to their callbacks.
 ///
 /// ```
-/// fn foo() {
+/// fn foo() -> Action(result, state) {
 ///   use original_state <- do(get_state())
 ///   use result <- do(some_action)
 ///   use new_state <- do(get_state())
@@ -197,7 +197,7 @@ pub fn map_error(
 /// together with `use` expressions.
 ///
 /// ```
-/// fn foo() {
+/// fn foo() -> Action(String, state) {
 ///   use a_result <- do(some_action)
 ///   use another_result <- do(another_action("blah"))
 ///   return(a_result <> another_result)
@@ -207,7 +207,7 @@ pub fn map_error(
 /// Using `use` is of course optional.
 ///
 /// ```
-/// fn bar() {
+/// fn bar() -> Action(result, state) {
 ///   do(some_action, fn(result) {
 ///     io.debug(result)
 ///     return(result)
