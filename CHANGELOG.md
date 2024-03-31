@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning].
 
 ## [Unreleased]
 
+## [0.2.1] - 2024-03-31
+
 ### Changed
 
 - Added missing return type annotations to example functions in doc comments.
@@ -26,6 +28,7 @@ and this project adheres to [Semantic Versioning].
 [semantic versioning]: https://semver.org/spec/v2.0.0.html
 
 <!-- Versions -->
-[unreleased]: https://github.com/MystPi/act/compare/v0.2.0...HEAD
+[unreleased]: https://github.com/MystPi/act/compare/v0.2.1...HEAD
+[0.2.1]: https://github.com/MystPi/act/releases/v0.2.1
 [0.2.0]: https://github.com/MystPi/act/releases/v0.2.0
 [0.1.0]: https://github.com/MystPi/act/releases/v0.1.0
