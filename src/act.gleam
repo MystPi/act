@@ -115,6 +115,9 @@ pub fn error(value: error) -> ResultAction(ok, error, state) {
 /// }
 /// ```
 ///
+/// 💡 If you find yourself combining `_state` functions with `do` a lot, check
+/// out the [`state`](./act/state.html) module!
+///
 pub fn get_state() -> Action(state, state) {
   fn(state) { #(state, state) }
 }
@@ -128,6 +131,9 @@ pub fn get_state() -> Action(state, state) {
 /// }
 /// ```
 ///
+/// 💡 If you find yourself combining `_state` functions with `do` a lot, check
+/// out the [`state`](./act/state.html) module!
+///
 pub fn set_state(state: state) -> Action(Nil, state) {
   fn(_) { #(state, Nil) }
 }
@@ -140,6 +146,9 @@ pub fn set_state(state: state) -> Action(Nil, state) {
 ///   update_state(fn(s) { s + by })
 /// }
 /// ```
+///
+/// 💡 If you find yourself combining `_state` functions with `do` a lot, check
+/// out the [`state`](./act/state.html) module!
 ///
 pub fn update_state(updater: fn(state) -> state) -> Action(Nil, state) {
   fn(state) { #(updater(state), Nil) }
@@ -214,6 +223,9 @@ pub fn map_error(
 ///   })
 /// }
 /// ```
+///
+/// 💡 If you find yourself combining `_state` functions with `do` a lot, check
+/// out the [`state`](./act/state.html) module!
 ///
 pub fn do(
   first_do: Action(a, state),
