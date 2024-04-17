@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning].
 
 ## [Unreleased]
 
+### Added
+
+- `state` module to enhance readability of common state operations (`get`, `set`, and `update`).
+
 ## [0.2.1] - 2024-03-31
 
 ### Changed
