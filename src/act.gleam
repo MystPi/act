@@ -310,3 +310,13 @@ pub fn try_each(
     })
   }
 }
+
+/// Merges a nested `Action` into a single layer.
+///
+pub fn flatten(action: Action(Action(b, a), a)) -> Action(b, a) {
+  fn(state) {
+    let #(state, action) = action(state)
+    let #(state, result) = action(state)
+    #(state, result)
+  }
+}

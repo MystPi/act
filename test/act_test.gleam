@@ -3,6 +3,8 @@
 
 import gleam/int
 import gleam/io
+import gleeunit
+import gleeunit/should
 
 // The `Action` type and `do` function are imported unqualified since they are
 // so common.
@@ -46,4 +48,11 @@ pub fn main() {
 
   io.println("The result is " <> int.to_string(result))
   io.println("The state is " <> int.to_string(final_state))
+
+  gleeunit.main()
+}
+
+pub fn flatten_test() {
+  act.flatten(fn(ctx) { #(ctx, fn(ctx) { #(ctx, "result") }) })("state")
+  |> should.equal(#("state", "result"))
 }
