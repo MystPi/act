@@ -218,7 +218,7 @@ pub fn map_error(
 /// ```
 /// fn bar() -> Action(result, state) {
 ///   do(some_action, fn(result) {
-///     io.debug(result)
+///     echo result 
 ///     return(result)
 ///   })
 /// }
